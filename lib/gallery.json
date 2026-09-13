@@ -1,0 +1,99 @@
+{
+  "railway": [
+    {
+      "src": "/images/railway-gallery-1.webp",
+      "caption": "Central Park aerial perspective",
+      "width": 2400,
+      "height": 1350,
+      "description": "The park follows the linear grain of the former rail yard, using planted strips, retained traces and new cross-connections to stitch the landscape into its neighbourhood."
+    },
+    {
+      "src": "/images/railway-gallery-2.webp",
+      "caption": "Coal Drops Plaza axonometric view",
+      "width": 2400,
+      "height": 1359,
+      "description": "Coal Drops Plaza combines generous open space with planted edges and clear routes. Its platform-like organisation recalls railway infrastructure while supporting gathering and movement."
+    }
+  ],
+  "difc": [
+    {
+      "src": "/images/difc-gallery-1.webp",
+      "caption": "Urban landscape perspective",
+      "width": 2400,
+      "height": 1350,
+      "description": "A pedestrian route threads through planting beneath the surrounding buildings, showing how shade and landscape can bring a more intimate scale to the district."
+    },
+    {
+      "src": "/images/difc-gallery-2.webp",
+      "caption": "Public realm perspective",
+      "width": 2400,
+      "height": 1350,
+      "description": "The public realm connects buildings through paths, planted spaces and places to pause, extending the landscape framework into the everyday experience of the masterplan."
+    }
+  ],
+  "mountain": [
+    {
+      "src": "/images/mountain-gallery-1.webp",
+      "caption": "The Ridge aerial perspective",
+      "width": 2400,
+      "height": 1200,
+      "description": "An elevated view reveals the Ridge within the wider city, emphasising the relationship between its artificial landform and the surrounding urban fabric."
+    },
+    {
+      "src": "/images/mountain-gallery-2.webp",
+      "caption": "Mountain landscape perspective",
+      "width": 2400,
+      "height": 1200,
+      "description": "A ground-level perspective places movement and activity within the sculpted slopes, illustrating how the mountain can be experienced as an accessible landscape."
+    }
+  ],
+  "mirage": [
+    {
+      "src": "/images/mirage-gallery-1.webp",
+      "caption": "Resort concept perspective",
+      "width": 2400,
+      "height": 1696,
+      "description": "Monumental columns rise above a planted base, expressing the resort as a rediscovered city whose architecture and landscape are closely intertwined."
+    },
+    {
+      "src": "/images/mirage-gallery-2.webp",
+      "caption": "Resort exterior perspective",
+      "width": 2400,
+      "height": 1703,
+      "description": "The Carved City is viewed as a network of planted terraces and water spaces, set below the surrounding dunes and organised around sheltered outdoor experiences."
+    }
+  ],
+  "north-resort": [
+    {
+      "src": "/images/north-resort-gallery-1.webp",
+      "caption": "Main pool landscape",
+      "width": 2400,
+      "height": 1350,
+      "description": "Palms, pool edges and shaded seating frame the main swimming space. The landscape establishes a relaxed guest environment with views through to the wider coastal setting."
+    },
+    {
+      "src": "/images/north-resort-gallery-2.webp",
+      "caption": "Wellness village arrival",
+      "width": 2400,
+      "height": 1350,
+      "description": "A sheltered arrival space brings mature planting into the wellness setting, using shade, seating and framed views to create a calm transition between inside and outside."
+    }
+  ],
+  "marina": [
+    {
+      "src": "/images/marina-gallery-1.webp",
+      "caption": "Arrival from the marina",
+      "width": 2400,
+      "height": 1350,
+      "description": "Planting and a clear arrival forecourt guide guests towards the hotel entrance, beginning the sequence of spaces that leads through the property to the beach."
+    },
+    {
+      "src": "/images/marina-gallery-2.webp",
+      "caption": "Adult pool landscape",
+      "width": 2400,
+      "height": 1350,
+      "description": "The adult pool is framed by palm planting and low-rise buildings, with the landscape opening towards the coast and connecting swimming, seating and circulation."
+    }
+  ],
+  "heterotopia": []
+}

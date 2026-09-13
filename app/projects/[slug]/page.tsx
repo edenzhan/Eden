@@ -1,0 +1,19 @@
+import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { projects, confidentiality } from '@/lib/projects';
+import ProjectGallery from '@/components/project-gallery';
+import gallery from '@/lib/gallery.json';
+export async function generateMetadata({ params }: {params:Promise<{slug:string}>}):Promise<Metadata>{ const {slug}=await params; const p=projects.find(p=>p.slug===slug); return {title:p?`${p.title} — Eden`:'Project not found — Eden',description:p?.description}; }
+export default async function ProjectPage({params}:{params:Promise<{slug:string}>}){
+ const {slug}=await params; const index=projects.findIndex(p=>p.slug===slug); if(index<0)notFound(); const p=projects[index]; const next=projects[(index+1)%projects.length];
+ return <main className="project-page">
+  <header className="detail-header"><a href="/" className="back-link"><ArrowLeft size={18}/> Back to world</a><a href="/" className="detail-brand">EDEN</a><span className="eyebrow">PROJECT {p.id} / 07</span></header>
+  <section className="project-hero"><img src={`/images/${p.key}.webp`} alt={`${p.title} — ${p.subtitle}`}/><div className="hero-caption"><span className="eyebrow">{p.category} / {p.year}</span><h1>{p.title}</h1><p>{p.subtitle}</p></div></section>
+  <section className="project-story"><div><span className="eyebrow">THE PROJECT</span><h2>{p.theme}</h2></div><div><p className="description">{p.description}</p><dl><div><dt>Location</dt><dd>{p.location}</dd></div><div><dt>Period</dt><dd>{p.year}</dd></div><div><dt>My role</dt><dd>{p.role}</dd></div><div><dt>Contribution</dt><dd>{p.tasks}</dd></div><div><dt>Practice / institution</dt><dd>{p.id==='07'?'UCL · Bartlett School of Architecture':'BIG · Bjarke Ingels Group'}</dd></div></dl></div></section>
+  {p.key==='heterotopia'?<section className="project-film" aria-label="Pumping Heterotopia project film"><div className="film-heading"><span className="eyebrow">PROJECT FILM</span><h2>Pumping Heterotopia in motion</h2></div><div className="film-player"><iframe src="https://player.vimeo.com/video/746948451?dnt=1" title="Pumping Heterotopia — project animation by Yizhan Zhang" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen/></div><p>Yizhan (Eden) Zhang · The Bartlett Autumn Show 2022 <a href="https://autumn2022.bartlettarchucl.com/ds2-experimental-disruptions/yizhan-eden-zhangs-project" target="_blank" rel="noreferrer">View the original exhibition <ArrowUpRight size={15}/></a></p></section>:<section className="original-gallery" aria-label="Project image gallery"><span className="eyebrow">PROJECT PERSPECTIVES</span>{(gallery as Record<string,{src:string;caption:string;description?:string;width:number;height:number}[]>)[p.key].map(im=><figure key={im.src}><a href={im.src} target="_blank" rel="noreferrer" aria-label={`Open full image: ${im.caption}`}><img src={im.src} alt={`${p.title}: ${im.caption}`} width={im.width} height={im.height} loading="lazy"/></a><figcaption><strong>{im.caption}</strong><p>{im.description}</p></figcaption></figure>)}</section>}
+  <ProjectGallery start={p.pages[0]} end={p.pages[1]} title={p.title}/>
+  <footer className="project-end"><a href={`/projects/${next.slug}`} className="next-project"><span><span className="eyebrow">NEXT LANDSCAPE / {next.id}</span><strong>{next.title}</strong></span><ArrowUpRight size={40}/></a><a href="/" className="project-back-world"><ArrowLeft size={18}/> Back to world</a><div className="project-credits"><p>{confidentiality}</p><p>The work represents my role and design contributions. {p.id==='07'?'Individual graduate work © Yizhan Zhang.':'Project work at BIG — Bjarke Ingels Group. Images and project material remain credited to their respective creators as presented in the portfolio.'}</p></div></footer>
+ </main>
+}
+
