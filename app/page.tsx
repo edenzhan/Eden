@@ -1,6 +1,6 @@
 'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, UserRound, Compass, List, Plus, Minus, Maximize, Navigation2, ChevronLeft, ChevronRight, ArrowUp, ArrowDown, ArrowLeft, ArrowRight, TrainFront, Building2, Mountain, Sun, TreePalm, Anchor, Cog, Waves } from 'lucide-react';
+import { ArrowUpRight, Compass, List, Plus, Minus, Maximize, Navigation2, ChevronLeft, ChevronRight, ArrowUp, ArrowDown, ArrowLeft, ArrowRight, TrainFront, Building2, Mountain, Sun, TreePalm, Anchor, Cog, Waves } from 'lucide-react';
 import { projects } from '@/lib/projects';
 import { clampCamera, nearestProject, moveExplorer, screenToWorld, projectZone, zoneDetails, movementHeading } from '@/lib/world';
 
@@ -55,7 +55,7 @@ export default function World() {
  function adjustZoom(amount:number){setZoom(z=>Math.max(minZoom,Math.min(2.6,z+amount)));setInteracted(true)}
  const stopKey=(key:string)=>{keys.current.delete(key)};
  return <main className="world-app">
-  <header className="world-header"><div className="brand-navigation"><a className="wordmark" href="/">EDEN<span>LANDSCAPE WORLDS</span></a><a href="/cv" className="profile-link" aria-label="View my CV" title="View my CV"><UserRound size={21}/></a></div><a className="pill" href="#project-index"><List size={16}/> Project index <span>07</span></a></header>
+  <header className="world-header"><a className="wordmark" href="/">EDEN<span>LANDSCAPE WORLDS</span></a><nav className="header-actions" aria-label="Portfolio navigation"><a className="pill" href="#project-index"><List size={16}/> Project index <span>07</span></a><a href="/cv" className="profile-link" aria-label="View my CV" title="View my CV"><img src="/images/profile.jpg" alt="" width={36} height={36} className="profile-avatar"/></a></nav></header>
   <section ref={viewport} className={`map-viewport explorer-map ${pointer?"has-map-pointer":""}`} aria-label="Explore seven portfolio landscapes" aria-describedby="map-instructions" tabIndex={0}
    onPointerDown={e=>{if((e.target as HTMLElement).closest('button,a,aside,label'))return;viewport.current?.focus({preventScroll:true});drag.current={x:e.clientX,y:e.clientY,pan};e.currentTarget.setPointerCapture(e.pointerId);}}
    onPointerLeave={()=>{setPointer(null);previousCursor.current=null}}
