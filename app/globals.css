@@ -108,3 +108,26 @@ a svg,.back-top-arrow{transition:transform .22s ease;display:inline-block}.next-
 .joystick-marker{position:absolute;color:#e8f1ee;font-size:18px;line-height:1;pointer-events:none}.joystick-marker.north{top:4px}.joystick-marker.south{bottom:4px}.joystick-marker.east{right:7px}.joystick-marker.west{left:7px}
 @media(any-pointer:coarse),(max-width:700px){.touch-joystick{display:block}.explorer-map .map-controls{bottom:218px}}
 @media(max-width:700px){.touch-joystick{right:16px;bottom:278px}.explorer-map .map-controls{bottom:278px}.desktop-map-hint{display:none}.touch-map-hint{display:inline}}
+/* Help sits at the outer edge now that the compass is removed. */
+.explorer-map .map-tools{right:max(16px,env(safe-area-inset-right))}
+.explorer-map .instructions{right:0;max-width:calc(100vw - 32px)}
+/* Short, rotated phone screens: keep all interaction controls in view. */
+@media(orientation:landscape) and (max-height:600px) and (max-width:1100px){
+ .world-header{height:48px;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+ .world-header .wordmark{font-size:24px}.world-header .wordmark span{font-size:7px;margin-top:3px}
+ .explorer-map{height:calc(100svh - 48px);height:calc(100dvh - 48px);min-height:0}
+ .explorer-map .map-tools{top:8px}.map-top-note{top:19px;font-size:10px}
+ .explorer-map .map-intro{top:17%;width:240px}.explorer-map .map-intro h1{font-size:34px;line-height:1;margin:0}
+ .map-intro>.eyebrow,.map-intro>p,.explorer-map .map-footer,.zone-discovery,.map-top-note{display:none}
+ .explorer-map .destination-bar{left:78px;right:132px;bottom:max(12px,env(safe-area-inset-bottom));transform:none;width:auto;max-width:none;min-height:86px;display:flex;gap:12px;padding:10px 12px}
+ .destination-bar>img{display:none}.destination-text{flex:1}.destination-text h2{font-size:17px;line-height:1.12;margin:5px 0 0}
+ .destination-text .eyebrow{font-size:8px}.destination-text .destination-subtitle,.destination-text .destination-location{display:none}
+ .destination-actions{display:flex;flex-direction:column;gap:4px;min-width:112px;margin:0}
+ .destination-cycle{justify-content:space-between;gap:4px}.destination-cycle button{min-width:36px;min-height:32px}
+ .destination-enter{min-height:36px;padding:8px 10px;font-size:12px}
+ .explorer-map .map-controls{left:max(14px,env(safe-area-inset-left));bottom:max(14px,env(safe-area-inset-bottom));flex-direction:column;border-radius:22px}
+ .map-controls button{width:40px;height:38px}.map-controls button+button{border-left:0;border-top:1px solid var(--border)}
+ .touch-joystick{display:block;right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom))}
+ .joystick-base{width:100px;height:100px}.joystick-knob{width:42px;height:42px}
+ .explorer-map .instructions.open{max-height:calc(100dvh - 116px);overflow-y:auto;touch-action:pan-y}
+}

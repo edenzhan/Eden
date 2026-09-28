@@ -1,6 +1,6 @@
 'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, Compass, List, Plus, Minus, Maximize, Navigation2, ChevronLeft, ChevronRight, ArrowUp, ArrowDown, ArrowLeft, ArrowRight, TrainFront, Building2, Mountain, Sun, TreePalm, Anchor, Cog, Waves } from 'lucide-react';
+import { ArrowUpRight, List, Plus, Minus, Maximize, Navigation2, ChevronLeft, ChevronRight, ArrowUp, ArrowDown, ArrowLeft, ArrowRight, TrainFront, Building2, Mountain, Sun, TreePalm, Anchor, Cog, Waves } from 'lucide-react';
 import { projects } from '@/lib/projects';
 import { beginGesture, updateGesture, type Gesture } from '@/lib/map-gesture';
 import type { PointerEvent as ReactPointerEvent } from 'react';
@@ -137,7 +137,7 @@ export default function World() {
    {!interacted&&<div className="map-intro"><span className="eyebrow">A PORTFOLIO TO EXPLORE</span><h1><i>Landscape<br/>worlds.</i></h1><p>Choose an island. Follow your curiosity.</p></div>}
    {zoneInfo&&<aside className="zone-discovery" style={{borderColor:zoneInfo.color}}><ZoneIcon size={18} style={{color:zoneInfo.color}}/><div><strong>{zoneInfo.label}</strong><p>{zoneInfo.detail}</p></div></aside>}
 
-   <div className="map-compass"><Compass size={30} strokeWidth={1}/><span>N</span></div>
+
    <div className="map-top-note"><span className="status-dot"/> 7 places to discover</div>
    <div className="map-tools"><button onClick={()=>setHelp(!help)} aria-expanded={help} aria-controls="map-instructions">How to explore <span>?</span></button><div id="map-instructions" className={help?'instructions open':'instructions'}><p>Drag to pan. Select a landmark to travel.</p><p>Focus the map, then use arrow keys or WASD to explore. Press Enter near a landmark to open its project. Escape shows the whole world.</p><p>Touch: drag with one finger to pan. Pinch with two fingers to zoom. Drag the joystick to steer the plane; release to stop. Tap a landmark to select it.</p></div></div>
    <div className="map-controls"><button aria-label="Zoom in" disabled={zoom>=2.6} onClick={()=>adjustZoom(.2)}><Plus size={18}/></button><button aria-label="Zoom out" disabled={zoom<=minZoom+.001} onClick={()=>adjustZoom(-.2)}><Minus size={18}/></button><button aria-label="Show whole world" onClick={overview}><Maximize size={17}/></button></div>
